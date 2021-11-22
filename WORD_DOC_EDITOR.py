@@ -12,8 +12,8 @@ document = MailMerge(template)
 print(document.get_merge_fields())
 
 document.merge(
-    Name='DARTH',
-    LastName='VADER',
+    Name='DARTH',  # format = upper()
+    LastName='VADER',  # format = upper()
     Street='Throne-Room',
     HouseNumber='1',
     City='Deathstar',
@@ -26,7 +26,7 @@ document.merge(
     Product='Super Laser - COLOR : Green, full power, destroy planets',
     asinID='if392jf893',  # len = 10, char = numbers + letters, format = upper(letters)
     Prc='999,00',  # max len = xxx,xx
-    n='10',  # max len = xx
+    n='10',  # max len = x
     a='2,00',  # max len = xx,xx
     b='3,00',  # max len = xx,xx
     c='3,00',  # max len = xx,xx
