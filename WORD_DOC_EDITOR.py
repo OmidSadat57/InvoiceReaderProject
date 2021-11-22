@@ -20,9 +20,11 @@ document.merge(
     PostalCode='000066',
     Country='Galactic Empire',
     DeliveryDate='21 September 2021',  # format = DD Month YYYY
-    InvoiceNumber='DE2MQ619AEUI',  # len = 12, char = numbers + letters
+    InvoiceNumber='DE2MQ619AEUI',  # len = 12, char = numbers + letters, , format = upper(letters)
+    OrderDate='19 September 2021',  # format = DD Month YYYY
+    OrderNumber='123-1234567-1234567',  # len = 19, char = numbers + '-' , format = xxx-xxxxxxx-xxxxxxx
     Product='Super Laser - COLOR : Green, full power, destroy planets',
-    asinID='if392jf893',  # len = 10, char = numbers + letters
+    asinID='if392jf893',  # len = 10, char = numbers + letters, format = upper(letters)
     Prc='999,00',  # max len = xxx,xx
     n='10',  # max len = xx
     a='2,00',  # max len = xx,xx

@@ -1,0 +1,11 @@
+n = Menge
+a = Versandkosten ohne USt.
+b = Versandkosten mit USt.
+c = Versandkosten Gesamt
+x = Stückpreis ohne USt.
+p = USt. % Satz
+y = Stückpreis mit USt.
+z = Zwischensumme Produkt (Menge * Stückpreis mit USt.)
+s0 = Zwischensumme ohne USt.
+s1 = Gesamt USt. Betrag
+
