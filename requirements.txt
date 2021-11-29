@@ -1,0 +1,10 @@
+# conda install
+lxml
+pywin32
+-c conda-forge poppler
+
+# pip install
+docx-mailmerge
+docx2pdf
+pytesseract
+pdf2image
