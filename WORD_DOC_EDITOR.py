@@ -6,7 +6,7 @@ from mailmerge import MailMerge
 # from datetime import date
 from docx2pdf import convert
 
-template = "invoice.docx"
+template = "invoice_amazon.docx"
 
 document = MailMerge(template)
 print(document.get_merge_fields())

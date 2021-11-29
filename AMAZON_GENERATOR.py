@@ -1,14 +1,12 @@
-from future import print_function
-from datetime import date
-from mailmerge import MailMerge
+import pandas as pd
 # from datetime import date
 from docx2pdf import convert
-import pandas as pd
+from mailmerge import MailMerge
 
 data4 = pd.read_csv('C:/Users/Admin/Desktop/Unternehmenssoftware/DataSetBereinigung_Projekt/alte_Unterlagen/Adresses_adapted.csv')
 
 for index, row in data4.iterrows():
-    template = "C:/Users/Admin/Desktop/Unternehmenssoftware/DataSetBereinigung_Projekt/alte_Unterlagen/invoice.docx"
+    template = "C:/Users/Admin/Desktop/Unternehmenssoftware/DataSetBereinigung_Projekt/alte_Unterlagen/invoice_amazon.docx"
     document = MailMerge(template)
     document.merge(
         Name=row['Vorname'],
