@@ -22,4 +22,4 @@ for index, row in data4.iterrows():
     )
 
     document.write('invoice-output.docx')
-    convert(f'invoice-output.docx', f'C:/Users/Admin/Desktop/Invoices/output{index}.pdf')
+    convert(f'../invoice-output.docx', f'C:/Users/Admin/Desktop/Invoices/output{index}.pdf')
