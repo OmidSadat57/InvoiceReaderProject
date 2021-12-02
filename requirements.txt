@@ -8,3 +8,6 @@ docx-mailmerge
 docx2pdf
 pytesseract
 pdf2image
+pandas
+requests
+bs4
