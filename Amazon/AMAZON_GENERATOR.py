@@ -5,11 +5,11 @@ from docx2pdf import convert
 import pandas as pd
 from decimal import Decimal
 
-data = pd.read_csv('C:/Users/Admin/Desktop/Unternehmenssoftware/DataSetBereinigung_Projekt/Test1/Test_data.csv')
+data = pd.read_csv('C:/Users/Admin/Desktop/Unternehmenssoftware/DataSetBereinigung_Projekt/Test1/Adresses_edited.csv')
 
 for index, row in data.iterrows():
 
-    template = "C:/Users/Admin/Desktop/Unternehmenssoftware/DataSetBereinigung_Projekt/Test1/invoice_amazon.docx"
+    template = "C:/Users/Admin/Desktop/Unternehmenssoftware/DataSetBereinigung_Projekt/invoice_amazon.docx"
     document = MailMerge(template)
 
     document.merge(
