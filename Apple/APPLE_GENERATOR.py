@@ -12,7 +12,7 @@ p_df = pandas.read_csv('Products/product_computers.csv', ';')
 
 for index, row in df.iterrows():
 
-    if index >= 2:
+    if index >= 192:
         break
 
     try:
@@ -22,14 +22,14 @@ for index, row in df.iterrows():
         document.merge(
             Nme=row['Vorname'],  # format = Jerome
             LstNme=row['Name'],  # format = Cook
-            Street=row['Straße'],
+            Street=row['Straße'][:9],
             HsNr=str(row['Hausnummer']),
             City=row['Ort'],
             PCode=str(row['PLZ']),
             Country='Germany',  # format = upper()
             DeliveryDate=row['Bestelldatum'],  # format = dd.mm.yyyy
             DueDate=row['Lieferdatum'],  # format = dd.mm.yyyy
-            InvNum='invoice_number',  # len = 10, char = numbers + letters, , format = LLxxxxxxxx
+            InvNum='DE12ABII34',  # len = 10, char = numbers + letters, , format = LLxxxxxxxx
             ApOrNr='0123456789',  # len = 10, char = numbers
             OrdDate=row['Bestelldatum'],  # format = dd.mm.yyyy
             CNr=str(row['KundenNr']),  # len = 6, char = numbers
@@ -37,7 +37,7 @@ for index, row in df.iterrows():
             DelivNum='0123456789',  # len = 10, char = numbers
             ProdNum='123456',  # len = 6, char = numbers
             MatNum='LLLXXLL/L',  # len = 9, char = numbers + letters, format = LLLxxLL/L
-            Product=p_df.iloc[index, 0][:33],  # items from Apple product list, stings sliced at len 33
+            Product=p_df.iloc[index, 0][:33],  # items from Apple product list, strings sliced at len 33
             Prc=str(row['Betrag']),  # max len = xxx,xx
             n=str(row['n']),  # max len = xx
             x=str(row['Stückpreis ohne Ust']),  # max len = xx,xx
