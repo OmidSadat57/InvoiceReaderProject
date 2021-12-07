@@ -8,7 +8,7 @@ from decimal import Decimal
 data = pd.read_csv('C:/Users/Admin/Desktop/Unternehmenssoftware/DataSetBereinigung_Projekt/Test2_Xing/Xing_data.csv')
 
 for index, row in data.iterrows():
-    if index == 3:  # use index == 200 --> if you want to generate 200 invoices
+    if index == 199:  # use index == 999 --> if you want to generate max = 999 invoices
         break
     template = "C:/Users/Admin/Desktop/Unternehmenssoftware/DataSetBereinigung_Projekt/Test2_Xing/XING_PRM_Template.docx"
     document = MailMerge(template)
