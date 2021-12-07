@@ -9,6 +9,9 @@ data = pd.read_csv('C:/Users/Admin/Desktop/Unternehmenssoftware/DataSetBereinigu
 
 for index, row in data.iterrows():
 
+    if index == 199:  # use index == 999 --> to generate max = 999 invoices
+        break
+
     template = "C:/Users/Admin/Desktop/Unternehmenssoftware/DataSetBereinigung_Projekt/invoice_amazon.docx"
     document = MailMerge(template)
 
