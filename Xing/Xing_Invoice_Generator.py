@@ -5,12 +5,13 @@ from docx2pdf import convert
 import pandas as pd
 from decimal import Decimal
 
-data = pd.read_csv('C:/Users/Admin/Desktop/Unternehmenssoftware/DataSetBereinigung_Projekt/Test2_Xing/Xing_data.csv')
+data = pd.read_csv('C:/Users/Admin/Desktop/Unternehmenssoftware/Project_InvoiceReader/Xing_Data_Invoice_Generator/Xing_data.csv')
 
 for index, row in data.iterrows():
-    if index == 199:  # use index == 999 --> if you want to generate max = 999 invoices
+    if index == 3:  # use index == 200 --> if you want to generate 200 invoices
         break
-    template = "C:/Users/Admin/Desktop/Unternehmenssoftware/DataSetBereinigung_Projekt/Test2_Xing/XING_PRM_Template.docx"
+
+    template = "C:/Users/Admin/Desktop/Unternehmenssoftware/Project_InvoiceReader/Xing_Data_Invoice_Generator/XING_PRM_Template.docx"
     document = MailMerge(template)
     document.merge(
         Name=row['Vorname'],
@@ -23,6 +24,7 @@ for index, row in data.iterrows():
         InvoiceDate=row['Rechnungs_Datum'],  # as string, format = DD.MM.YYYY
         InvoiceNum=str(row['Rechnungs_Nummer']),  # len = 15, char = PRM + number , format = PRMxxxxxxxxxxxxx
         CustomerNumber=str(row['Kunden_Nummer']),  # len = 10, char = number , format = xxxxxxxxxx
+        Product=row['Produkt'],  # product as string --> value = 'Premium-Mitgliedschaft'
         LBegin=row['Leistungs_Beginn'],  # the same as InvoiceDate, as string format = DD.MM.YYYY
         LEnd=row['Leistungs_Ende'],  # the date of service end, format = DD.MM.YYYY
         NB=str(round(Decimal(row['Preis_ohne_Ust']), 2)).replace(".", ","),  # format max = xx,xx
@@ -33,5 +35,5 @@ for index, row in data.iterrows():
         AbrNum=row['Abrechnungs_Nummer']  ## max len = 19, format = B-xAVxxxxxGGxxxxxxx
     )
 
-    document.write('Xing-Test-output.docx')
-    convert(f'Xing-Test-output.docx', f'C:/Users/Admin/Desktop/Invoices_Xing/Xing_invoice-output{index}.pdf')
+    document.write('Xing-Invoice-output.docx')
+    convert(f'Xing-Invoice-output.docx', f'C:/Users/Admin/Desktop/Invoices_Xing/Xing_invoice-output{index}.pdf')
