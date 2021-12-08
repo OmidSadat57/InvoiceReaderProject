@@ -5,16 +5,15 @@ from docx2pdf import convert
 import pandas as pd
 from decimal import Decimal
 
-data = pd.read_csv('C:/Users/Admin/Desktop/Unternehmenssoftware/DataSetBereinigung_Projekt/Test1/Adresses_edited.csv')
+data = pd.read_csv('C:/Users/Admin/Desktop/Unternehmenssoftware/Project_InvoiceReader/Amazon_Data_Invoice_Generator/Amazon_Data.csv')
 
 for index, row in data.iterrows():
 
-    if index == 199:  # use index == 999 --> to generate max = 999 invoices
+    if index == 3:  # use index == 200 --> if you want to generate 200 invoices
         break
 
-    template = "C:/Users/Admin/Desktop/Unternehmenssoftware/DataSetBereinigung_Projekt/invoice_amazon.docx"
+    template = "C:/Users/Admin/Desktop/Unternehmenssoftware/Project_InvoiceReader/Amazon_Data_Invoice_Generator/invoice_amazon.docx"
     document = MailMerge(template)
-
     document.merge(
         Name=row['Vorname'].upper(),  # format = upper()
         LastName=row['Name'].upper(),  # format = upper()
@@ -25,10 +24,10 @@ for index, row in data.iterrows():
         Country=row['Land'],
         DeliveryDate=row['Rechnungs_Liefer_Datum'],  # format = DD Month YYYY
         OrderDate=row['Bestell_Datum'],  # format = DD Month YYYY
-        OrderNumber='123-1234567-1234567',  # len = 19, char = numbers + '-' , format = xxx-xxxxxxx-xxxxxxx
-        InvoiceNumber='DE2MQ619AEUI',  # len = 12, char = numbers + letters, , format = upper(letters)
-        Product='Super Laser - COLOR : Green, full power, destroy planets',
-        asinID='if392jf893',  # len = 10, char = numbers + letters, format = upper(letters)
+        OrderNumber=row['Bestell_Nummer'],  # len = 19, char = numbers + '-' , format = xxx-xxxxxxx-xxxxxxx
+        InvoiceNumber=row['Rechnungs_Nummer'],  # len = 12, char = numbers + letters, , format = upper(letters)
+        Product=row['Produkt'],
+        asinID=row['ASIN_ID'],  # len = 10, char = numbers + letters, format = upper(letters)
         n=str(row['n']),  # max len = x
         x=str(round(Decimal(row['Stückpreis ohne Ust']), 2)).replace(".", ","),  # max len = xx,xx
         p=str(round(Decimal(row['Ust. % Satz'] * 100))),  # max len = xx
@@ -42,5 +41,5 @@ for index, row in data.iterrows():
         s1=str(round(Decimal(row['Gesamt Ust. Betrag']), 2)).replace(".", ",")  # max len = x,xx
     )
 
-    document.write('invoice-output_new.docx')
-    convert(f'invoice-output_new.docx', f'C:/Users/Admin/Desktop/Invoices_test1/output_new{index}.pdf')
+    document.write('Amazon-invoice-output.docx')
+    convert(f'Amazon-invoice-output.docx', f'C:/Users/Admin/Desktop/Invoices_Amazon/Amazon-invoice-output{index}.pdf')
