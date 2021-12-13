@@ -18,7 +18,7 @@ Our secondary goal is to build a ruleset for each invoice to read / extract spec
 
 ## Project Planning
 
-### Invoice Dataset Generation
+### Invoice Data Generation
 1. Select invoice (Amazon, Apple, Xing, ...)
 2. Create template (.docx)
 3. Write script for invoice generation
