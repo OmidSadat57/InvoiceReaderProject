@@ -19,8 +19,8 @@ Our secondary goal is to build a ruleset for each invoice to read / extract spec
 ## Project Planning
 
 ### Active Tasks
-1. Build Classification Mode *Tensorflow*
-2. Build Rule Sets for Invoices (Name, Address, Invoice Date, Amount €) *OCR*
+1. Build Classification Mode -> *Tensorflow*
+2. Build Rule Sets for Invoices (Name, Address, Invoice Date, Amount €) -> *OCR*
 
 ### Invoice Data Generation
 1. Select invoice (Amazon, Apple, Xing, ...)
