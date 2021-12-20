@@ -33,11 +33,11 @@ Our secondary goal is to build a ruleset for each invoice to read / extract spec
 ### Simulation Prep
 1. Build Classification Model
 2. Create / Modify ruleset(s)
-3. Create test-data set(s)
+3. Create test-data set(s) + create training-data set(s)
 
 ### Simulation
-- Run Test with **2** inovice types
-- Run Test with **3** inovice types 
+- Run Test with **2** invoice types
+- Run Test with **3** invoice types 
 - [...]
 ### Analysis
 - How does the performance change with each added invoice type?
