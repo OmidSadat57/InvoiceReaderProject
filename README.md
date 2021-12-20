@@ -20,7 +20,7 @@ Our secondary goal is to build a ruleset for each invoice to read / extract spec
 
 ### Active Tasks
 1. Build Classification Mode **[Jerome]** -> *Tensorflow*
-2. Build Rule Sets for Invoices (Name, Address, Invoice Date, Amount €) **[Omid, Duncan]** -> *OCR*
+2. Build Rule Sets for Invoices (Name, Address, Invoice Date, Amount €) **[Omid, Duncan]** -> *OCR (pytesseract)*
 
 ### Invoice Data Generation
 1. Select invoice (Amazon, Apple, Xing, ...)
