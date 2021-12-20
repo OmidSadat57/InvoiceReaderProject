@@ -36,6 +36,10 @@ Our secondary goal is to build a ruleset for each invoice to read / extract spec
 3. Create test-data set(s)
 
 ### Simulation
-- tba
+- Run Test with **2** inovice types
+- Run Test with **3** inovice types 
+- [...]
 ### Analysis
-- tba
+- How does the performance change with each added invoice type?
+- How is the accuracy overall?
+- What could be improved?
