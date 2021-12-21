@@ -18,6 +18,10 @@ Our secondary goal is to build a ruleset for each invoice to read / extract spec
 
 ## Project Planning
 
+### Active Tasks
+1. Build Classification Mode **[Jerome]** -> *Tensorflow*
+2. Build Rule Sets for Invoices (Name, Address, Invoice Date, Amount €) **[Omid, Duncan]** -> *OCR (pytesseract)*
+
 ### Invoice Data Generation
 1. Select invoice (Amazon, Apple, Xing, ...)
 2. Create template (.docx)
@@ -29,9 +33,13 @@ Our secondary goal is to build a ruleset for each invoice to read / extract spec
 ### Simulation Prep
 1. Build Classification Model
 2. Create / Modify ruleset(s)
-3. Create test-data set(s)
+3. Create test-data set(s) + create training-data set(s)
 
 ### Simulation
-- tba
+- Run Test with **2** invoice types
+- Run Test with **3** invoice types 
+- [...]
 ### Analysis
-- tba
+- How does the performance change with each added invoice type?
+- How is the accuracy overall?
+- What could be improved?
