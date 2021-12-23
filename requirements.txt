@@ -18,3 +18,4 @@ pillow~=8.4.0
 numpy~=1.21.2
 tqdm~=4.62.3
 tensorflow
+matplotlib
