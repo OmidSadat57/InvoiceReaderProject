@@ -28,7 +28,7 @@ for index, row in data.iterrows():
         n=str(row['n']),
         PNr=row['PNr'],
         Product=row['Produkt'],
-        LSNr=row['LSNr'],
+        LSNr=str(row['LSNr']),
         DeliveryDate=row['DeliveryDate'],  # format = DD Month YYYY
         PackID=row['PackID'],
         SerialNr=['SerialNr'],
