@@ -11,7 +11,7 @@ for index, row in data.iterrows():
     if index == 3:  # use index == 200 --> if you want to generate 200 invoices
         break
 
-    template = "C:/Users/Admin/Desktop/Unternehmenssoftware/Project_InvoiceReader/Xing_Data_Invoice_Generator/XING_PRM_Template.docx"
+    template = "C:/Users/Admin/Desktop/Unternehmenssoftware/Project_InvoiceReader/Xing_Data_Invoice_Generator/XING_Template.docx"
     document = MailMerge(template)
     document.merge(
         Name=row['Vorname'],
