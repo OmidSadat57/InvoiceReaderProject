@@ -8,8 +8,6 @@ import pandas
 # Tutorial: https://www.youtube.com/watch?v=9FCw1xo_s0I&list=PL2VXyKi-KpYuTAZz__9KVl1jQz74bDG7i&index=7
 
 # If you don't have tesseract executable in your PATH, include the following:
-from Mod_Scripts.img_mods.IMG_PROCESSING import images
-
 pytesseract.pytesseract.tesseract_cmd = r'C:/Users/jmanc/AppData/Local/Programs/Tesseract-OCR/tesseract.exe'
 
 # images = glob.glob('C:/Users/jmanc/Documents/Jerome Dokus/HTW Studium/Semester 5_HTW/Unternehmenssoftware/Invoice_DATA/Invoices_Amazon/images/*.png')
