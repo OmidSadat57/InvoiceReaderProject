@@ -14,9 +14,11 @@ pytesseract.pytesseract.tesseract_cmd = r'C:/Users/jmanc/AppData/Local/Programs/
 
 # images = glob.glob('C:/Users/jmanc/Documents/Jerome Dokus/HTW Studium/Semester 5_HTW/Unternehmenssoftware/Invoice_DATA/Invoices_Amazon/images/*.png')
 # images = glob.glob('C:/Users/jmanc/Documents/Jerome Dokus/HTW Studium/Semester 5_HTW/Unternehmenssoftware/Invoice_DATA/Invoices_Pro-clipper/images/*.png')
-images = glob.glob('C:/Users/jmanc/PycharmProjects/InvoiceReaderProject/Apple/Data/img/*.png')
+images = glob.glob('C:/Users/jmanc/Documents/Jerome Dokus/HTW Studium/Semester 5_HTW/Unternehmenssoftware/Invoice_DATA/Invoices_Apple/images/*.png')
 
-df = pandas.DataFrame(columns=['Person', 'Street', 'City_PostalCode', 'Country'])
+df = pandas.DataFrame(columns=['Person', 'Street', 'HouseNumber', 'PostalCode', 'City', 'Country'])
+
+error_list = list()
 
 # save images in list
 for rechnum, img in enumerate(tqdm.tqdm(images)):
@@ -38,47 +40,52 @@ for rechnum, img in enumerate(tqdm.tqdm(images)):
 
     ocr_string = pytesseract.image_to_string(roi)
     ocr_string = ocr_string.strip('\x0c')
-    ocr_string = ocr_string[12:]
-    # ocr_string = ocr_string.replace('\n', ' ')
-    ocr_string_list = ocr_string.split('\n')
+
+    # Remove 'Rechnung an'
+    ocr_string = ocr_string[11:]
+
+    # create spaces before upper letters
+    for c in ocr_string:
+        if c.isupper():
+            ocr_string = ocr_string.replace(c, ' ' + c)
+    ocr_string = ocr_string.replace('\n', ' ')
+    ocr_string_list = ocr_string.split(' ')
 
     # filter out blanks
     for item in ocr_string_list:
         if item == '':
             ocr_string_list.remove(item)
 
-    # Apple 'Rechnung an' remove
-    # slice = ocr_string_list[0]
-    # ocr_string_list[0] = slice[12:]
+    # merge first two items (sometimes names are cut from each other)
+    if len(ocr_string_list[0]) != '':
+        # Combine Name
+        ocr_string_list[0:2] = [''.join(ocr_string_list[0:2])]
 
     print(ocr_string_list)
 
-    # if len(ocr_string_list) > 4:
-    #     for x in ocr_string_list:
-    #         print(type(x))
+    # Apple
+    try:
 
-    # print(ocr_string_list)
+        data = {
+            'Person': ocr_string_list[0],
+            'Street': ocr_string_list[1],
+            'HouseNumber':ocr_string_list[2],
+            'PostalCode': ocr_string_list[3],
+            'City': ocr_string_list[4],
+            'Country': ocr_string_list[5]
+        }
 
-    # Amazon
-    data = {
-        'Person': ocr_string_list[0],
-        'Street': ocr_string_list[1],
-        'City_PostalCode': ocr_string_list[2],
-        'Country': ocr_string_list[3]
-    }
+        df = df.append(data, ignore_index=True)
 
-    # print(data)
+    except IndexError:
+        error_list.append(img)
 
-    df = df.append(data, ignore_index=True)
-
-    if rechnum == 10:
-        break
+    # if rechnum == 10:
+    #     break
 
     # !!! Box count start = 0 !!!
     # Amazon: Person Info = Box 7, Logo/Organization = Box 1 {iterations = 10}
     # Apple: Person Info = Box 7, Logo = Box 1 {iterations = 9}
     # Pro-clipper: Person Info = Box 2, Logo = Box b {iterations = 13}
 
-# print(df)
-
-df.to_csv('outputData.csv', sep=';', encoding='utf-8')
+df.to_csv('C:/Users/jmanc/PycharmProjects/InvoiceReaderProject/CLASSIFICATION_MODEL/Apple_Test/AppleDataOutput.csv', sep=';', encoding='utf-8')
