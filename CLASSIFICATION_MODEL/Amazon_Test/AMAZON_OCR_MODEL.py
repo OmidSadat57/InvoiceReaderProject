@@ -48,7 +48,6 @@ for rechnum, img in enumerate(tqdm.tqdm(images)):
 
     print(ocr_string_list)
 
-    # Amazon
     try:
 
         data = {
