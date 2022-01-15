@@ -9,7 +9,7 @@ import tqdm
 # If you don't have tesseract executable in your PATH, include the following:
 pytesseract.pytesseract.tesseract_cmd = r'C:/Users/jmanc/AppData/Local/Programs/Tesseract-OCR/tesseract.exe'
 
-images = glob.glob('C:/Users/jmanc/Documents/Jerome Dokus/HTW Studium/Semester 5_HTW/Unternehmenssoftware/Invoice_DATA/Invoices_Xing/images/*.png')
+images = glob.glob('C:/Users/jmanc/Documents/Jerome Dokus/HTW Studium/Semester 5_HTW/Unternehmenssoftware/Invoice_DATA/Invoices_HP/images/*.png')
 
 for rechnum, img in enumerate(tqdm.tqdm(images)):
 
@@ -29,11 +29,11 @@ for rechnum, img in enumerate(tqdm.tqdm(images)):
     for boxnum, c in enumerate(cnts):
         x, y, w, h, = cv2.boundingRect(c)
         roi = imgx[y:y + h, x:x + w]
-        cv2.imwrite(f'C:/Users/jmanc/PycharmProjects/InvoiceReaderProject/CLASSIFICATION_MODEL/XING_Test/Boxes/{rechnum}/box{boxnum}.png', roi)
+        cv2.imwrite(f'C:/Users/jmanc/PycharmProjects/InvoiceReaderProject/CLASSIFICATION_MODEL/HP_Test/Boxes/{rechnum}/box{boxnum}.png', roi)
         # if h > 200 and w > 200:
         cv2.rectangle(imgx, (x, y), (x + w, y + h), (36, 255, 12), 2)
 
-    cv2.imwrite(f'C:/Users/jmanc/PycharmProjects/InvoiceReaderProject/CLASSIFICATION_MODEL/XING_Test/Output/testBoxOutput{rechnum}.png', imgx)
+    cv2.imwrite(f'C:/Users/jmanc/PycharmProjects/InvoiceReaderProject/CLASSIFICATION_MODEL/HP_Test/Output/testBoxOutput{rechnum}.png', imgx)
 
     if rechnum >= 10:
         break
