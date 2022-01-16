@@ -6,7 +6,7 @@ from docx2pdf import convert
 
 template = "invoice_apple.docx"
 df = pandas.read_csv('Apple/Adressen_Apple.csv', ';', dtype={'KundenNr': str})
-p_df = pandas.read_csv('Products/product_computers.csv', ';')
+p_df = pandas.read_csv('Product_Data/product_computers.csv', ';')
 
 # print(document.get_merge_fields())
 
