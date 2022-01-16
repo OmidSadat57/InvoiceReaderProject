@@ -31,7 +31,7 @@ Our primary goal is to build and compare different models for reading / extracti
   *  Save output into csv file for performance examination
 
 ### Analysis
-- Compare both models:
+  *  Model Comparison
   *  Strengths vs. Weaknesses?
   *  How do the performances compare?
   *  Application in the real world possible?
