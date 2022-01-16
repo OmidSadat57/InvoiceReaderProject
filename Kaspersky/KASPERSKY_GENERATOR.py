@@ -12,7 +12,7 @@ excel_data.to_csv('C:/Studium/6. Semester/Unternehmenssoftware/repo/InvoiceReade
 
 for index, row in excel_data.iterrows():
 
-    if index == 3:  # use index == 200 --> if you want to generate 200 invoices
+    if index == 200:  # use index == 200 --> if you want to generate 200 invoices
         break
 
     template = "C:/Studium/6. Semester/Unternehmenssoftware/repo/InvoiceReaderProject/Kaspersky/invoice_kaspersky.docx"
