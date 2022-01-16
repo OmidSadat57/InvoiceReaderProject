@@ -16,7 +16,7 @@ image_list = []
 
 img_size = 250
 
-images = glob.glob('C:/Users/jmanc/PycharmProjects/InvoiceReaderProject/Apple/Data/img/*.png')
+images = glob.glob('/InvoiceTypeGeneration/Apple/Data/img/*.png')
 
 # save images in list
 for img in tqdm.tqdm(images):

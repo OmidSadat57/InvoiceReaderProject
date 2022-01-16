@@ -6,7 +6,7 @@ from docx2pdf import convert
 
 template = "invoice_apple.docx"
 df = pandas.read_csv('Apple/Adressen_Apple.csv', ';', dtype={'KundenNr': str})
-p_df = pandas.read_csv('Products/product_computers.csv', ';')
+p_df = pandas.read_csv('Product_Data/product_computers.csv', ';')
 
 # print(document.get_merge_fields())
 
@@ -38,7 +38,7 @@ for index, row in df.iterrows():
             ProdNum='123456',  # len = 6, char = numbers
             MatNum='LLLXXLL/L',  # len = 9, char = numbers + letters, format = LLLxxLL/L
             Product=p_df.iloc[index, 0][:33],  # items from Apple product list, strings sliced at len 33
-            Prc=str(row['Betrag']),  # max len = xxx,xx
+            Prc=str(row['Betrag']).replace(' €', ''),  # max len = xxx,xx
             n=str(row['n']),  # max len = xx
             x=str(row['Stückpreis ohne Ust']),  # max len = xx,xx
             p=str(row['Ust. % Satz']),  # max len = xx
