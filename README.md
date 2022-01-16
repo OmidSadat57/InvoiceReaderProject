@@ -24,11 +24,11 @@ Our primary goal is to build and compare different models for reading / extracti
 1. Method: Deep Learning
   *  Pump different invoice types into Model
   *  Callibrate Model to increase performance
-3. Method: Ruleset
+2. Method: Ruleset
   *  Write a logical Ruleset for each invoice variation
   *  Save output into csv file for performance examination
 
 ### Analysis
-- How does the performance change with each added invoice type?
-- How is the accuracy overall?
-- What could be improved?
+- Compare both models:
+  *  Strengths vs. Weaknesses?
+  *  how do the performances compare?
