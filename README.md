@@ -12,6 +12,8 @@ This repository contains scripts and other documents for our project in Unterneh
 
 Our primary goal is to build and compare different models for reading / extracting specific data contained within invoices
 
+## Project Guide
+
 ### Invoice Data Generation
 1. Select invoice (Amazon, Apple, Xing, ...)
 2. Create template (.docx)
