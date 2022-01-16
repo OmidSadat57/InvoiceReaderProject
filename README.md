@@ -10,7 +10,7 @@ This repository contains scripts and other documents for our project in Unterneh
 
 ### Primary
 
-Our primary goal is to build and compare different models for reading / extracting specific data conatined in an invoice
+Our primary goal is to build and compare different models for reading / extracting specific data contained within invoices
 
 ### Invoice Data Generation
 1. Select invoice (Amazon, Apple, Xing, ...)
