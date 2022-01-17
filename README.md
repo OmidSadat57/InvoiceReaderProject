@@ -23,7 +23,7 @@ Our primary goal is to build and compare different models for reading / extracti
 6. Convert invoice files to .png files
 
 ### Model Building
-1. Method: Deep Learning - Spacey NER
+1. Method: Deep Learning - *Spacy NER*
   *  Pump different invoice types into Model
   *  Callibrate Model to increase performance
 2. Method: Ruleset
