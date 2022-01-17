@@ -9,7 +9,15 @@ import tqdm
 # If you don't have tesseract executable in your PATH, include the following:
 pytesseract.pytesseract.tesseract_cmd = r'C:/Users/jmanc/AppData/Local/Programs/Tesseract-OCR/tesseract.exe'
 
-images = glob.glob('C:/Users/jmanc/Documents/Jerome Dokus/HTW Studium/Semester 5_HTW/Unternehmenssoftware/Invoice_DATA/Invoices_Kaspersky/images/*.png')
+
+image_source = 'C:/Users/jmanc/Documents/Jerome Dokus/HTW Studium/Semester 5_HTW/Unternehmenssoftware/Invoice_DATA/Invoices_Kaspersky/images/*.png'
+
+box_output_location = f'C:/Users/jmanc/PycharmProjects/InvoiceReaderProject/CLASSIFICATION_MODEL/Kaspersky_Test/Boxes/'
+
+image_output_location = f'C:/Users/jmanc/PycharmProjects/InvoiceReaderProject/CLASSIFICATION_MODEL/Kaspersky_Test/Output/'
+
+images = glob.glob(image_source)
+
 
 for rechnum, img in enumerate(tqdm.tqdm(images)):
 
@@ -29,11 +37,12 @@ for rechnum, img in enumerate(tqdm.tqdm(images)):
     for boxnum, c in enumerate(cnts):
         x, y, w, h, = cv2.boundingRect(c)
         roi = imgx[y:y + h, x:x + w]
-        cv2.imwrite(f'C:/Users/jmanc/PycharmProjects/InvoiceReaderProject/CLASSIFICATION_MODEL/Kaspersky_Test/Boxes/{rechnum}/box{boxnum}.png', roi)
+        # Folders 0, 1, 2,...10 required in output location
+        cv2.imwrite(box_output_location + f'{rechnum}/box{boxnum}.png', roi)
         # if h > 200 and w > 200:
         cv2.rectangle(imgx, (x, y), (x + w, y + h), (36, 255, 12), 2)
 
-    cv2.imwrite(f'C:/Users/jmanc/PycharmProjects/InvoiceReaderProject/CLASSIFICATION_MODEL/Kaspersky_Test/Output/testBoxOutput{rechnum}.png', imgx)
+    cv2.imwrite(image_output_location + f'testBoxOutput{rechnum}.png', imgx)
 
     if rechnum >= 10:
         break

@@ -10,11 +10,20 @@ import pandas
 # If you don't have tesseract executable in your PATH, include the following:
 pytesseract.pytesseract.tesseract_cmd = r'C:/Users/jmanc/AppData/Local/Programs/Tesseract-OCR/tesseract.exe'
 
+
+image_source = 'C:/Users/jmanc/Documents/Jerome Dokus/HTW Studium/Semester 5_HTW/Unternehmenssoftware/Invoice_DATA/Invoices_Kaspersky/images/*.png'
+
+csv_output_location = 'C:/Users/jmanc/PycharmProjects/InvoiceReaderProject/CLASSIFICATION_MODEL/Kaspersky_Test/'
+
+csv_output_filename = 'KasperskyDataOutput.csv'
+
+
 # images = glob.glob('C:/Users/jmanc/Documents/Jerome Dokus/HTW Studium/Semester 5_HTW/Unternehmenssoftware/Invoice_DATA/Invoices_Amazon/images/*.png')
 # images = glob.glob('C:/Users/jmanc/Documents/Jerome Dokus/HTW Studium/Semester 5_HTW/Unternehmenssoftware/Invoice_DATA/Invoices_Pro-clipper/images/*.png')
 # images = glob.glob('C:/Users/jmanc/Documents/Jerome Dokus/HTW Studium/Semester 5_HTW/Unternehmenssoftware/Invoice_DATA/Invoices_Apple/images/*.png')
 # images = glob.glob('C:/Users/jmanc/Documents/Jerome Dokus/HTW Studium/Semester 5_HTW/Unternehmenssoftware/Invoice_DATA/Invoices_HP/images/*.png')
-images = glob.glob('C:/Users/jmanc/Documents/Jerome Dokus/HTW Studium/Semester 5_HTW/Unternehmenssoftware/Invoice_DATA/Invoices_Kaspersky/images/*.png')
+
+images = glob.glob(image_source)
 
 df = pandas.DataFrame(columns=['Person', 'Street', 'City_PostalCode', 'Country'])
 
@@ -73,4 +82,4 @@ for rechnum, img in enumerate(tqdm.tqdm(images)):
     # Pro-clipper: Person Info = Box 2, Logo = Box b {iterations = 13}
     # Xing: Person Info = Box 5, Logo = Box 8 {iterations = 13}
 
-df.to_csv('C:/Users/jmanc/PycharmProjects/InvoiceReaderProject/CLASSIFICATION_MODEL/HP_Test/HPDataOutput.csv', sep=';', encoding='utf-8')
+df.to_csv(csv_output_location + csv_output_filename, sep=';', encoding='utf-8')

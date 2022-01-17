@@ -10,9 +10,18 @@ import pandas
 # If you don't have tesseract executable in your PATH, include the following:
 pytesseract.pytesseract.tesseract_cmd = r'C:/Users/jmanc/AppData/Local/Programs/Tesseract-OCR/tesseract.exe'
 
+
+image_source = 'C:/Users/jmanc/Documents/Jerome Dokus/HTW Studium/Semester 5_HTW/Unternehmenssoftware/Invoice_DATA/Invoices_Apple/images/*.png'
+
+csv_output_location = 'C:/Users/jmanc/PycharmProjects/InvoiceReaderProject/CLASSIFICATION_MODEL/Apple_Test/'
+
+csv_output_filename = 'AppleDataOutput.csv'
+
+
 # images = glob.glob('C:/Users/jmanc/Documents/Jerome Dokus/HTW Studium/Semester 5_HTW/Unternehmenssoftware/Invoice_DATA/Invoices_Amazon/images/*.png')
 # images = glob.glob('C:/Users/jmanc/Documents/Jerome Dokus/HTW Studium/Semester 5_HTW/Unternehmenssoftware/Invoice_DATA/Invoices_Pro-clipper/images/*.png')
-images = glob.glob('C:/Users/jmanc/Documents/Jerome Dokus/HTW Studium/Semester 5_HTW/Unternehmenssoftware/Invoice_DATA/Invoices_Apple/images/*.png')
+
+images = glob.glob(image_source)
 
 df = pandas.DataFrame(columns=['Person', 'Street', 'HouseNumber', 'PostalCode', 'City', 'Country'])
 
@@ -85,4 +94,4 @@ for rechnum, img in enumerate(tqdm.tqdm(images)):
     # Apple: Person Info = Box 7, Logo = Box 1 {iterations = 9}
     # Pro-clipper: Person Info = Box 2, Logo = Box b {iterations = 13}
 
-df.to_csv('C:/Users/jmanc/PycharmProjects/InvoiceReaderProject/CLASSIFICATION_MODEL/Apple_Test/AppleDataOutput.csv', sep=';', encoding='utf-8')
+df.to_csv(csv_output_location + csv_output_filename, sep=';', encoding='utf-8')
