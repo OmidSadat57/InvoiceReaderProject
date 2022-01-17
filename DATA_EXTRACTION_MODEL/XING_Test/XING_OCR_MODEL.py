@@ -13,7 +13,7 @@ pytesseract.pytesseract.tesseract_cmd = r'C:/Users/jmanc/AppData/Local/Programs/
 
 image_source = 'C:/Users/jmanc/Documents/Jerome Dokus/HTW Studium/Semester 5_HTW/Unternehmenssoftware/Invoice_DATA/Invoices_Xing/images/*.png'
 
-csv_output_location = 'C:/Users/jmanc/PycharmProjects/InvoiceReaderProject/CLASSIFICATION_MODEL/XING_Test/'
+csv_output_location = 'C:/Users/jmanc/PycharmProjects/InvoiceReaderProject/DATA_EXTRACTION_MODEL/XING_Test/'
 
 csv_output_filename = 'XingDataOutput.csv'
 

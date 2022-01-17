@@ -12,9 +12,9 @@ pytesseract.pytesseract.tesseract_cmd = r'C:/Users/jmanc/AppData/Local/Programs/
 
 image_source = 'C:/Users/jmanc/Documents/Jerome Dokus/HTW Studium/Semester 5_HTW/Unternehmenssoftware/Invoice_DATA/Invoices_Kaspersky/images/*.png'
 
-box_output_location = f'C:/Users/jmanc/PycharmProjects/InvoiceReaderProject/CLASSIFICATION_MODEL/Kaspersky_Test/Boxes/'
+box_output_location = f'C:/Users/jmanc/PycharmProjects/InvoiceReaderProject/DATA_EXTRACTION_MODEL/Kaspersky_Test/Boxes/'
 
-image_output_location = f'C:/Users/jmanc/PycharmProjects/InvoiceReaderProject/CLASSIFICATION_MODEL/Kaspersky_Test/Output/'
+image_output_location = f'C:/Users/jmanc/PycharmProjects/InvoiceReaderProject/DATA_EXTRACTION_MODEL/Kaspersky_Test/Output/'
 
 images = glob.glob(image_source)
 

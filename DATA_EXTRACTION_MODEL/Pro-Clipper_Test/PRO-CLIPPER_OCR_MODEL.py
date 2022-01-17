@@ -13,7 +13,7 @@ pytesseract.pytesseract.tesseract_cmd = r'C:/Users/jmanc/AppData/Local/Programs/
 
 image_source = 'C:/Users/jmanc/Documents/Jerome Dokus/HTW Studium/Semester 5_HTW/Unternehmenssoftware/Invoice_DATA/Invoices_Pro-clipper/images/*.png'
 
-csv_output_location = 'C:/Users/jmanc/PycharmProjects/InvoiceReaderProject/CLASSIFICATION_MODEL/Pro-clipper_Test/'
+csv_output_location = 'C:/Users/jmanc/PycharmProjects/InvoiceReaderProject/DATA_EXTRACTION_MODEL/Pro-clipper_Test/'
 
 csv_output_filename = 'Pro-ClipperDataOutput.csv'
 
